@@ -6,7 +6,7 @@ export default function Navbar() {
         <nav>
             <div className='container-fluid nav-flex'>
                 <h2>Seek.ai</h2>
-                <button className="btn btn-donate" name="donate">Donate</button>
+                <button className="btn btn-secondary" name="donate">Donate</button>
             </div>
         </nav>
     )
