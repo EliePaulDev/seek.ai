@@ -1,13 +1,13 @@
 import './App.css'
+import Layout from './layout/layout'
 
-function App() {
+export default function App() {
 
   return (
     <div data-testid="app">
-      <h1>Seek.ai</h1>
-      <h2>Coming Soon!</h2>
+      <Layout />
     </div>
   )
 }
 
-export default App
+

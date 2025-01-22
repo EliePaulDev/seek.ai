@@ -1,10 +1,10 @@
-import React from "react";
+import './Navbar.css';
 
 
 export default function Navbar() {
     return (
         <nav>
-            <h1>Seek.ai</h1>
+            <h2>Seek.ai</h2>
             <button name="donate">Donate</button>
         </nav>
     )
