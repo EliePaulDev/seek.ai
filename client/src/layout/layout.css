@@ -1,0 +1,11 @@
+.layout-flex {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 2rem;
+}
+
+.layout-grid {
+    display: grid;
+    place-items: center;
+}

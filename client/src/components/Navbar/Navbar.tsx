@@ -4,8 +4,10 @@ import './Navbar.css';
 export default function Navbar() {
     return (
         <nav>
-            <h2>Seek.ai</h2>
-            <button name="donate">Donate</button>
+            <div className='container-fluid nav-flex'>
+                <h2>Seek.ai</h2>
+                <button name="donate">Donate</button>
+            </div>
         </nav>
     )
 }
