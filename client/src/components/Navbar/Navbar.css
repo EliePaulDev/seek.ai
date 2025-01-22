@@ -12,3 +12,12 @@ nav {
     justify-content: space-between;
     padding: 1rem 2rem;
 }
+
+.btn-donate {
+    background-color: transparent;
+    color: var(--primary-color);
+
+    &:hover {
+        color: var(--secondary-color);
+    }
+}
