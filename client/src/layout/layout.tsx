@@ -1,13 +1,12 @@
 import Navbar from "../components/Navbar/Navbar";
 import "./layout.css";
 
-export default function Layout() {
+export default function Layout({ children } : { children: React.ReactNode }) {
     return (
         <div data-testid="layout">
             <Navbar />
             <main className="container layout-grid">
-                <h1>Seek.ai</h1>
-                <h2>Coming Soon!</h2>
+               {children}
             </main>
         </div>
     )
