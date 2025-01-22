@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
 
 export default function Home() {
@@ -6,7 +8,7 @@ export default function Home() {
             <h1>Seek.ai</h1>
             <form role="search">
                 <input className='search-lg' type="search" placeholder="Company..." />
-                <button className="btn" type="submit">Search</button>
+                <button className="btn" type="submit"><FontAwesomeIcon icon={faSearch}/> Search</button>
             </form>
         </div>
     )
