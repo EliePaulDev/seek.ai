@@ -21,6 +21,13 @@ body {
   background-color: var(--secondary-color);
 }
 
+input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid var(--primary-color);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -48,6 +55,16 @@ body {
   transition: all 0.3s ease;
 
   &:hover {
-    background: var(--accent-color);
+    opacity: 0.7;
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
   }
 }
