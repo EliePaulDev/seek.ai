@@ -7,7 +7,7 @@ export default function Home() {
         <div className='home'>
             <h1>Seek.ai</h1>
             <form role="search">
-                <input className='search-lg' type="search" placeholder="Company..." />
+                <input className='search-lg' type="search" placeholder="Company..." autoFocus />
                 <button className="btn" type="submit"><FontAwesomeIcon icon={faSearch}/> Search</button>
             </form>
         </div>
