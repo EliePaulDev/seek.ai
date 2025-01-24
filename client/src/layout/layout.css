@@ -8,4 +8,5 @@
 .layout-grid {
     display: grid;
     place-items: center;
+    height: 60dvh;
 }

@@ -1,0 +1,7 @@
+.feedback {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    padding: 2rem;
+}
