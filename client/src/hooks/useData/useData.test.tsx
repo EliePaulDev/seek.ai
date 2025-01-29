@@ -52,6 +52,16 @@ test('useData should set data after fetching data', async () => {
     await waitFor(() => expect(result.current.data).toEqual({ message: 'Getting the proper data' }));
 });
 
+test('useData will use options object to fetch data', async () => {
+    server.use(
+        http.post('https://www.example.com', () => {
+            return HttpResponse.json({ message: 'Getting the proper data' });
+        })
+    )
+    const { result } = renderHook(() => useData('https://www.example.com', { method: 'POST' }));
+    await waitFor(() => expect(result.current.data).toEqual({ message: 'Getting the proper data' }));
+});
+
 test('useData should set error if fetch fails', async () => {
     server.use(
         http.get('https://www.example.com', () => {
@@ -62,3 +72,4 @@ test('useData should set error if fetch fails', async () => {
     const { result } = renderHook(() => useData('https://www.example.com'));
     await waitFor(() => expect(result.current.error).toEqual({ error: 'Failed to fetch data'}));
 });
+

@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 
-export function useData(url: string) {
+export function useData(url: string, options?: RequestInit) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(url);
+            const newUrl = new URL(url);
+            const response = await fetch(newUrl, options);
             const data = await response.json();
             if (response.ok) {
                 setData(data);
@@ -18,7 +19,7 @@ export function useData(url: string) {
         };
 
         fetchData();
-    }, [url]);
+    }, [url, options]);
 
     return { data, loading, error };
 }
