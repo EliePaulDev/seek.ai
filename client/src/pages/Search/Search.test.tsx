@@ -6,7 +6,7 @@ import Search from './Search';
 import { http, HttpResponse } from 'msw';
 
 const server = setupServer(
-    http.get('/api/crunchbase', () => {
+    http.get('/crunchbase', () => {
         return HttpResponse.json({ message: 'Getting crunchbase data' });
     })
 );
@@ -17,6 +17,6 @@ test('Search is rendered', () => {
             <Search />
         </MemoryRouter>
     );
-    const search = screen.getByText(/search/i);
+    const search = screen.getByText('Search');
     expect(search).toBeInTheDocument();
 })

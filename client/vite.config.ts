@@ -23,11 +23,6 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: path => path.replace(/^\/crunchbase/, '/data/searches/organizations')
       },
-      '/peopledata': {
-        target: ' https://api.peopledatalabs.com/v5',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/peopledata/, '/company/search')
-      }
     },
   }
 })
