@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 type data<T> = {
-    data: T | null;
+    data: T | undefined;
     loading: boolean;
     error: any;
 }

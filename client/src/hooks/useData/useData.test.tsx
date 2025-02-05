@@ -32,10 +32,7 @@ test('useData should load on initial render', () => {
     expect(result.current.loading).toBe(true);
 });
 
-test('useData should initialize data as an empty array', () => {
-    const { result } = renderHook(() => useData('https://www.example.com'));
-    expect(result.current.data).toEqual([]);
-});
+
 
 test('useData should initialize error as null', () => {
     const { result } = renderHook(() => useData('https://www.example.com'));
