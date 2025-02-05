@@ -7,8 +7,7 @@ export function useData(url: string, options?: RequestInit) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const newUrl = new URL(url);
-            const response = await fetch(newUrl, options);
+            const response = await fetch(url, options);
             const data = await response.json();
             if (response.ok) {
                 setData(data);
