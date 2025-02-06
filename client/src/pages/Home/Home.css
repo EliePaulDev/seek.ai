@@ -1,5 +1,9 @@
 .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    height: 70dvh;
 }
 
 .search-lg {

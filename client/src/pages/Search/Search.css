@@ -1,0 +1,18 @@
+.search {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+.search-sidebar {
+   flex-basis: 50rem;
+}
+
+
+.company-results {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}

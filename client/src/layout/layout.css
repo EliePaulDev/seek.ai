@@ -1,4 +1,4 @@
-.layout-flex {
+.layout {
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -6,7 +6,6 @@
 }
 
 .layout-grid {
-    display: grid;
-    place-items: center;
-    height: 80dvh;
+   padding-top: 6rem;
+   padding-bottom: 6rem;
 }
