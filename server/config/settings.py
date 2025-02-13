@@ -32,9 +32,9 @@ environ.Env.read_env(BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-kgve(3)49t0@2(l6_61$_+&5h#9y040qnx9h7z9o)a!h$63zll'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://seek-ai.onrender.com']
 
 
 # Application definition
@@ -64,15 +64,11 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
+    'https://seek-ai-sable.vercel.app'
 ]
 
-CORS_ALLOWED_METHODS = [
-    'POST',
-]
 
-CORS_ALLOW_HEADERS = [
-    'content-type',
-]
+
 
 ROOT_URLCONF = 'config.urls'
 

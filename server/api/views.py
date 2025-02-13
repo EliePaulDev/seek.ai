@@ -25,9 +25,6 @@ def search(request):
         }]
     }
 
-    print(f"payload: {payload}")
-
-
     company_data = requests.post(f"{env("DJANGO_CRUNCHBASE_API_URL")}/data/searches/organizations", headers=headers, json=payload).json()
 
     return Response(company_data)
