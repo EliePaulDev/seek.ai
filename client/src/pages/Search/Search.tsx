@@ -23,29 +23,14 @@ type crunchbaseData = {
 export default function Search() {
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('company');
-    const options = useMemo(() => ({
-        method: 'POST',
-        headers: {
-            "X-Cb-user-key": import.meta.env.VITE_CRUNCHBASE_API_KEY,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "field_ids": ["name", "linkedin", "twitter", "facebook", "short_description", "listed_stock_symbol", "image_url", "identifier", "website_url", "location_identifiers"],
-            "query": [{
-                "type": "predicate",
-                "field_id": "identifier",
-                "operator_id": "contains",
-                "values": [searchQuery]
-            }]
-})
-    }), [searchQuery]);
-    const { data, loading, error } = useData<crunchbaseData>("/crunchbase", options);
+    const { data, loading, error } = useData<crunchbaseData>(`/api/search?company=${searchQuery}`);
 
     return(
         <div className='search'>
             <div className='search-sidebar'>
                 <h3>Search</h3>
                 <p> term searched: {searchQuery}</p>
+                {data?.count && <p> {data.count} result{data.count > 1 && 's'}</p>}
             </div>
            <div className="company-results">
             {loading ? <p>Loading...</p> : (
