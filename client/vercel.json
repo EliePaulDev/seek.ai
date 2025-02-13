@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/crunchbase", 
-        "destination": "https://api.crunchbase.com/v4/data/searches/organizations"
+        "source": "/api", 
+        "destination": "https://seek-ai.onrender.com"
       }
     ]
   }
