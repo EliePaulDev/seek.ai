@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { useData } from '../../hooks/useData/useData';
 import CompanyCard from '../../components/CompanyCard/CompanyCard';
