@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-kgve(3)49t0@2(l6_61$_+&5h#9y040qnx9h7z9o)a!h$63zll
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://seek-ai.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://seek-ai.onrender.com', 'https://seek-ai-sable.vercel.app']
 
 
 # Application definition

@@ -22,14 +22,8 @@ type crunchbaseData = {
 export default function Search() {
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('company');
-    const options = {
-        method: "GET",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"  
-            }
-    }
-    const { data, loading, error } = useData<crunchbaseData>(`${import.meta.env.VITE_API_URL}/search?company=${searchQuery}`, options);
+
+    const { data, loading, error } = useData<crunchbaseData>(`${import.meta.env.VITE_API_URL}/search?company=${searchQuery}`);
   
 
     return(
