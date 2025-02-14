@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useData } from '../../hooks/useData/useData';
 import CompanyCard from '../../components/CompanyCard/CompanyCard';
@@ -22,7 +23,9 @@ type crunchbaseData = {
 export default function Search() {
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('company');
-    const { data, loading, error } = useData<crunchbaseData>(`/api/search?company=${searchQuery}`);
+    const { data, loading, error } = useData<crunchbaseData>(`${import.meta.env.VITE_API_URL}/search?company=${searchQuery}`);
+
+    useEffect(() => console.log(import.meta.env.VITE_API_URL));
 
     return(
         <div className='search'>
