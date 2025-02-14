@@ -23,6 +23,7 @@ export default function Search() {
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('company');
     const options = {
+        method: "GET",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"  
