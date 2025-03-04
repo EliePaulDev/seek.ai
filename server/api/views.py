@@ -30,3 +30,16 @@ def search(request):
     return Response(company_data)
 
 
+@api_view(["POST"])
+def feedback(request):
+    feedback = request.data["feedback"]
+    print(feedback)
+    return Response({"message": "Feedback received"})
+
+
+@api_view(["POST"])
+def donate(request):
+    donation = request.data["donation"]
+    print(donation)
+    return Response({"message": "Donation received"})
+

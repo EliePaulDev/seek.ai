@@ -21,5 +21,7 @@ from api import views;
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('search/', views.search),
-    path('search', views.search)
+    path('search', views.search),
+    path('feedback/', views.feedback),
+    path('donate/', views.donate)
 ]
