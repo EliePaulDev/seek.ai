@@ -6,7 +6,7 @@ import Search from './Search';
 import { http, HttpResponse } from 'msw';
 
 const server = setupServer(
-    http.post('/crunchbase', () => {
+    http.get(`${import.meta.env.VITE_API_URL}/search`, () => {
         return HttpResponse.json({ message: 'Getting crunchbase data' });
     })
 );

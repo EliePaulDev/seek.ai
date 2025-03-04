@@ -1,0 +1,38 @@
+.dialog-feedback {
+    display: flex;
+    flex-direction: column;
+    background-color:var(--secondary-color);
+    border: solid 1px var(--primary-color);
+    border-radius: 5px;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 4rem;
+    z-index: 900;
+    height: 25rem;
+
+    input, textarea, select {
+        font-size: 1rem;
+        padding: 0.3rem;
+        margin: 0;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
