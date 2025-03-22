@@ -14,3 +14,8 @@ nav {
     padding: 1rem 2rem;
 }
 
+.donate-container {
+    display: flex;
+    flex-direction: column;
+}
+

@@ -39,6 +39,7 @@ export default function Search() {
                     data?.entities.map((entity) => (
                         <CompanyCard 
                             key={entity.uuid}
+                            id={entity.uuid}
                             name={entity.properties?.name || ''}
                             website={entity.properties?.website_url}
                             shortDescription={entity.properties?.short_description}

@@ -1,0 +1,20 @@
+.donate-dialog:open {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color) !important;
+    border: solid 1px var(--primary-color);
+    border-radius: 5px;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    left:auto;
+    top:4.5rem;
+    right: 3rem;
+    z-index: 900;
+    height: 20rem;
+
+    input {
+        font-size: 1rem;
+        padding: 0.3rem;
+        margin: 0;
+    }
+}

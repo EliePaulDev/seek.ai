@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import "./DialogFeedback.css";
 
 
@@ -30,7 +30,7 @@ function feedbackForm({handleSubmit, handleChange}) {
 
 
 
-export default function DialogFeedback({toggleDialog}) {
+const DialogFeedback = forwardRef<HTMLDialogElement | null, { closeDialog: () => void}>(function DialogFeedback({closeDialog}, ref) {
     const [feedback, setFeedback] = useState({
         name: '',
         type: '',
@@ -39,10 +39,6 @@ export default function DialogFeedback({toggleDialog}) {
 
     const [submitSuccess, setSubmitSuccess] = useState(false);
     
-    function handleClose() {
-        toggleDialog();
-    }
-
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
         console.log(feedback);
@@ -74,12 +70,15 @@ export default function DialogFeedback({toggleDialog}) {
 
 
     return (
-        <div className="dialog-feedback">
-            <h2>Feedback</h2>
-            <button className="btn btn-close" onClick={handleClose}>X</button>
-            {!submitSuccess && <p>Send us your feedback</p>}
-            {submitSuccess ? <p>Feedback sent successfully</p> : feedbackForm({handleSubmit, handleChange})}
-            
-        </div>
+            <dialog ref={ref} className="dialog-feedback">
+                <h2>Feedback</h2>
+                <button className="btn btn-close" onClick={closeDialog}>X</button>
+                {!submitSuccess && <p>Send us your feedback</p>}
+                {submitSuccess ? <p>Feedback sent successfully</p> : feedbackForm({handleSubmit, handleChange})}
+                
+            </dialog>
     );
-}
+});
+
+
+export default DialogFeedback;

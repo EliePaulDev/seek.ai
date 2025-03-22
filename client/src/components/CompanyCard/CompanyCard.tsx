@@ -1,8 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './CompanyCard.css';
+import { useNavigate } from 'react-router';
 
 interface companyCardProps {
+    id: string;
     name: string;
     website: string;
     shortDescription?: string;
@@ -15,7 +17,16 @@ interface companyCardProps {
 
 }
 
-export default function CompanyCard({ name, website, shortDescription, imageUrl, facebook, linkedin, twitter, location, listedStock } : companyCardProps) {
+export default function CompanyCard({ id, name, website, shortDescription, imageUrl, facebook, linkedin, twitter, location, listedStock } : companyCardProps) {
+    const navigate = useNavigate();
+    
+    function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+        e.preventDefault();
+        navigate(`/company/${id}`);
+    }
+    
+    
+    
     return (
         <div className='company-card'>
             <div className='company-logo'>
@@ -31,6 +42,7 @@ export default function CompanyCard({ name, website, shortDescription, imageUrl,
                     {linkedin && <a href={linkedin} target='_blank'><FontAwesomeIcon icon={faLinkedin} /></a>}
                     {twitter && <a href={twitter} target='_blank'><FontAwesomeIcon icon={faTwitter} /></a>}
                 </div>
+                <button className="btn" onClick={handleClick}>More Info</button>
             </div>
         </div>
     )

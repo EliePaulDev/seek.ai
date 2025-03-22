@@ -19,7 +19,12 @@ def mock_request_api(monkeypatch):
     def mock_request_post(url, headers, json):
         return MockResponse(json, 200)
     
+    def mock_request_get(url, headers):
+        return MockResponse({"test": "test"}, 200)
+    
     monkeypatch.setattr('requests.post', mock_request_post)
+
+    monkeypatch.setattr('requests.get', mock_request_get)
 
 
 @pytest.mark.usefixtures("mock_request_api")
@@ -41,12 +46,21 @@ class TestSearch:
 class TestFeedback:
     def test_post_feedback(self):
         client = Client()
-        response = client.post('/feedback/', {'feedback': 'test'})
+        response = client.post('/feedback/', {'feedback': 'test'}, content_type="application/json")
         assert response.status_code == 200
 
 
 class TestDonate:
     def test_post_donate(self):
         client = Client()
-        response = client.post('/donate/', {'donation': 100})
+        response = client.post('/donate/', {"donation": {"name": "test", "amount": "2"}}, content_type="application/json")
         assert response.status_code == 200
+
+
+@pytest.mark.usefixtures("mock_request_api")
+class TestCompany:
+    def test_get_company(self, mock_request_api):
+        client = Client()
+        response = client.get('/company/1a589394-26c9-4ce5-8778-f3c9ecc2993f')
+        json_response = response.json()
+        assert json_response["test"] == "test"

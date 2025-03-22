@@ -23,5 +23,6 @@ urlpatterns = [
     path('search/', views.search),
     path('search', views.search),
     path('feedback/', views.feedback),
-    path('donate/', views.donate)
+    path('donate/', views.donate),
+    path('company/<uuid:company_id>', views.company)
 ]
